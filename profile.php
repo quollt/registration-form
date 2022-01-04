@@ -1,6 +1,7 @@
 <?php
      session_start();
-     if (!$_SESSION['user']) {
+     //session
+        if (!$_SESSION['user']) {
         header('Location: index.php');
       }
 
@@ -12,21 +13,14 @@
      <link rel="stylesheet" href="css/main.css">
      <title>Profile</title>
  </head>
-<header>
-</header>
  <body>
-<div><p><h3>Hello&nbsp;<? echo ($_SESSION['user']['name']);?></h3><p>
-
+<div><p><h2>Hello&nbsp;<? echo $_COOKIE['user_name'];?></h2><p><hr>
   <p>
-    <h4><?=$_SESSION['user']['login'] ?> </h4><br>
-    <h4><?=$_SESSION['user']['email'] ?> </h4><br>
-    <h4><?=$_SESSION['user']['name'] ?> </h4><br>
-
-    <h3><a href="logout.php">EXIT</a></h3>
-
-  <p>
-
-
+    <h4>Логин: <?=$_SESSION['user']['login'] ?> </h4><br>
+    <h4>Email: <?=$_SESSION['user']['email'] ?> </h4><br>
+    <h4>Имя: <?=$_SESSION['user']['name'] ?> </h4><br><hr>
+    <a href="logout.php">Выйти</a>
+  <p><a href="deleteuser.php">Удалить аккаунт</a></p>
 </div>
 </body>
 </html>

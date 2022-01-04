@@ -72,11 +72,11 @@ $.ajax({
     password: password,
     repassword: repassword,
     email: email,
-    name: name,
-  },
+    name: name
+    },
   success (data) {
 
-  if (data.status) {
+  if (data.status == true) {
     document.location.href = 'index.php';
 
   } else {
@@ -88,31 +88,31 @@ $.ajax({
 
         switch (data.type === 1) {
           case ((data.errorOfFields).includes("loginEmpty")):
-            $('#errorLogin').html("Enter login").css('color', 'red');
+            $('#errorLogin').html("Введите логин").css('color', 'red');
             break;
           case ((data.errorOfFields).includes("loginInvalid")):
-            $('#errorLogin').html("Login invalid, use only A-Z 0-9, min 6 max 20 characters").css('color', 'red');
+            $('#errorLogin').html("Неверный логин, используйте A-Z, 0-9, минимум 6 максимум 20 знаков").css('color', 'red');
             break;
           case ((data.errorOfFields).includes("loginExists")):
-            $('#errorLogin').html("login Exists !").css('color', 'red');
+            $('#errorLogin').html("Такой логин уже существует").css('color', 'red');
             break;
           case ((data.errorOfFields).includes("passwordEmpty")):
-              $('#errorPassword').html("Password is Empty!").css('color', 'red');
+              $('#errorPassword').html("Введите пароль").css('color', 'red');
               break;
           case ((data.errorOfFields).includes("passwordinvalid")):
-              $('#errorPassword').html("Min 6 max 20 only a-z and 0-9").css('color', 'red');
+              $('#errorPassword').html("Используйте A-Z, 0-9, минимум 6 максимум 20 знаков").css('color', 'red');
               break;
           case ((data.errorOfFields).includes("emailInvalid")):
-              $('#errorEmail').html("Email incorrect").css('color', 'red');
+              $('#errorEmail').html("Неверный Email").css('color', 'red');
               break;
           case ((data.errorOfFields).includes("emailExists")):
-              $('#errorEmail').html("Email already in used").css('color', 'red');
+              $('#errorEmail').html("Такой Email уже используется").css('color', 'red');
               break;
           case ((data.errorOfFields).includes("nameEmpty")):
-              $('#errorName').html("Enter your name").css('color', 'red');
+              $('#errorName').html("Введите имя").css('color', 'red');
               break;
           case ((data.errorOfFields).includes("nameInvalid")):
-              $('#errorName').html("Name is incorrect").css('color', 'red');
+              $('#errorName').html("Некорректное имя, используйте A-Z, А-Я").css('color', 'red');
               break;
           default:
             $('.errFieldMsg').html('').css('color', 'red');

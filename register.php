@@ -32,14 +32,14 @@
 
      <label>Name</label><div id="errorName" class="errFieldMsg"></div>
      <input type="text" name="name" placeholder="Enter name">
-     <button type="submit" class="RegisterButton">Register</button>
+     <button type="submit" class="RegisterButton">Зарегистрироваться</button>
 
       <p>Есть аккаунт? - <a href="index.php">Авторизируйтесь</a></p>
       </form>
       <p class="msg none"></p>
      </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jquery-3.6.0.js"></script>
 <script src="js/main.js"></script>
 
 </body>
